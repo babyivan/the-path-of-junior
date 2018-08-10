@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Виртуальные функции и все что с ними связано
+add_subdirectory(virtual-functions)
+
+# Другие тесты
+add_subdirectory(other)
