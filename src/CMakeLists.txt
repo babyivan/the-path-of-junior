@@ -5,3 +5,6 @@ add_subdirectory(virtual-functions)
 
 # Другие тесты
 add_subdirectory(other)
+
+# Структуры данных
+add_subdirectory(data-structures)

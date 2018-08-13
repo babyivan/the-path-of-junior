@@ -143,7 +143,7 @@ int main() {
     using namespace virtual9_1;
 
     // В данном случае нам нужно чтобы "component" был в "gpu" и "memory"
-    graphic_card gc("nvidia", "micron");    //component()  gpu()  component()  memory()  graphic_card()
+    graphic_card gc("NVIDIA", "Micron");    //component()  gpu()  component()  memory()  graphic_card()
 
     // Представим что у нас ммо-игра. Есть игрок расы "человек" и класса "робот". Оба наследуються от "character"..
     // ... class human : public character ... class robot : public virtual character ...
