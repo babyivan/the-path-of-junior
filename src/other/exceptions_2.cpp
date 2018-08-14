@@ -5,6 +5,7 @@
  * Exceptions и throw + несколько catch
  *
  */
+
 namespace a {
 void print_number(int value) {
   if (value < 0)

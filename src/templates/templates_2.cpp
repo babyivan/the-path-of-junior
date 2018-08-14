@@ -1,27 +1,66 @@
 #include <iostream>
 /*
  *
- * Шаблонны функций
- * typename (из языка "С") и class(пришло в "С++") - одно и тоже.
+ * Шаблонны класов
+ * template - перед классом дает знать что класс будет обобщенным
+ * T - название обобщенного типа данных (может быть несколько типов)
+ * Тип данных становиться известным в момент создание этого класса
+ *
  */
 
-// T - это один тип данных
+class test_class {
+ public:
+  test_class() {
+    a = b = c = 0;
+  }
+ public:
+  int a;
+  int b;
+  int c;
+};
+namespace t1 {
 template<typename T>
-T sum(const T &a, const T &b) {
-  std::cout << "type size: " << sizeof(T) << "; typename: " << typeid(T).name() << std::endl;
-  return a + b;
+class my_class {
+ public:
+  explicit my_class(T value) {
+    this->value = value;
+  }
+  void data_size_type() {
+    std::cout << "size: " << sizeof(T) << std::endl;
+  }
+ private:
+  T value;
+};
 }
-
-// T - это один тип данных, U - другой тип
+// Не перегжуються template по количеству параметров
+namespace t2 {
 template<typename T, typename U>
-T sum(const T &a, const U &b) {
-  return a + b;
+class my_class {
+ public:
+  explicit my_class(T value1, U value2) {
+    this->value1 = value1;
+    this->value2 = value2;
+  }
+  void data_size_type() {
+    std::cout << "size1: " << sizeof(T) << std::endl;
+    std::cout << "size2: " << sizeof(U) << std::endl;
+  }
+ private:
+  T value1;
+  U value2;
+};
 }
 
 int main() {
-  std::cout << sum(1, 2) << std::endl;      // type size: 4; typename: i     // 3
-  std::cout << sum(1.1, 2.2) << std::endl;  // type size: 8; typename: d    // 3.3
-  std::cout << sum(1, 2.2L) << std::endl;   // 3 (первый параметр типа int, вызываем [template<typename T, typename U>] тип возвращаемого значения T (int))
-                                            // результат сложения неявно будет преобразован в тип int.
+  ::t1::my_class<int> mc1(777);
+  mc1.data_size_type();    //size: 4
+
+  test_class tc;
+  ::t1::my_class<test_class> mc2(tc);
+  mc2.data_size_type();    //size: 12
+
+  ::t2::my_class<float, double> mc3(1.1f, 2.2);
+  mc3.data_size_type();     // size1: 4    // size2: 8
+
   return 0;
 }

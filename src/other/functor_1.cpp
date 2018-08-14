@@ -10,11 +10,11 @@ class my_functor {
  public:
   void operator()(const int &a, const int &b) {
     std::cout << "my_functor -> " << (a + b) <<
-              ", call count: " << count << std::endl;
-    count++;
+              ", call count: " << call_count << std::endl;
+    call_count++;
   }
  private:
-  int count = 1;
+  int call_count = 1;
 };
 
 int main() {

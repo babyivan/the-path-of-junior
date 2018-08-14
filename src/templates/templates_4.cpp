@@ -2,55 +2,36 @@
 #include <typeinfo>
 /*
  *
- * Наследование шаблонов класса
- *
+ * Специализация шаблонов класса
+ * это шаблон заточенный под определенный тип данных ?
+ * хак - таким образом можно запрещать использовать шаблон с этим типом данных
  */
 
-class test_class {
+template<class T>
+class printer {
  public:
-  test_class() {
-    a = b = c = 0;
+  explicit printer() {}
+
+  void print(const T &val) {
+    std::cout << "value is: " << val << std::endl;
   }
- public:
-  int a;
-  int b;
-  int c;
 };
 
-template<typename T>
-class type_size {
+template<>
+class printer<std::string> {
  public:
-  explicit type_size(T value) {
-    this->value = value;
-  }
-  void data_size_type() {
-    std::cout << "size: " << sizeof(T) << std::endl;
-  }
+  explicit printer() {}
 
- protected:
-  T value;
-};
-
-// Сохраняем "шаблонность" наследуемого класса
-template<class U>
-class type_info : public type_size<U> {
- public:
-  explicit type_info(U val)
-      : type_size<U>(val) {}
-  void show_type_name() {
-    std::cout << "Type name: " << typeid(type_size<U>::value).name() << std::endl;
+  void print(const std::string &val) {
+    std::cout << "[value is: " << val << "]" << std::endl;
   }
-
 };
 
 int main() {
-  type_info<int> ti1(1);
-  ti1.data_size_type();     // size: 4
-  ti1.show_type_name();     // Type name: i
+  printer<int> p1;
+  p1.print(123);     // value is: 123
 
-  test_class tc;
-  type_info<test_class> ti2(tc);
-  ti2.data_size_type();     // size: 12
-  ti2.show_type_name();     // Type name: 10test_class    (10test_class)??
+  printer<std::string> p2;
+  p2.print("123str123");     // [value is: 123str123]
   return 0;
 }

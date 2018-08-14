@@ -11,7 +11,19 @@ add_executable(exceptions__2 exceptions_2.cpp)
 add_executable(exceptions__3 exceptions_3.cpp)
 
 # Делегирующий конструктор
-add_executable(delegating-constructors__1 delegating-constructors.cpp)
+add_executable(delegating-constructors__1 delegating-constructors_1.cpp)
 
 # Приведение типов в стиле "С"
 add_executable(cast__1 cast_1.cpp)
+
+# Функторы
+add_executable(functor__1 functor_1.cpp)
+
+# Предикаты
+add_executable(predicate__1 predicate_1.cpp)
+
+# Перегрузка функций
+add_executable(func-overload__1 function-overload_1.cpp)
+
+# Преобразования в С++
+add_executable(cast__2 cast_2.cpp)

@@ -8,3 +8,9 @@ add_subdirectory(other)
 
 # Структуры данных
 add_subdirectory(data-structures)
+
+# Библиотека STL
+add_subdirectory(stl)
+
+# Шаблоны
+add_subdirectory(templates)

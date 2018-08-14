@@ -1,26 +1,50 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
 /*
  *
  * Предикаты
- *
+ * по факту функция которая должна возращать bool значение
  */
-class my_functor {
+
+// Простенький предикат
+bool greater_then_zero(const int &a) {
+  return a > 0;
+}
+
+// Более реальный пример предиката
+class person {
  public:
-  void operator()(const int &a, const int &b) {
-    std::cout << "my_functor -> " << (a + b) <<
-              ", call count: " << count << std::endl;
-    count++;
+  person(std::string name, int score) {
+    this->name = name;
+    this->score = score;
+  }
+
+  bool operator()(const person &p) {
+    return p.score > 150;
   }
  private:
-  int count = 1;
+  std::string name;
+  int score;
 };
 
 int main() {
-  my_functor f;
+  std::vector<int> v1 = {1, -33, -12, 28, 0, 94, 7};
+  long long result1 = std::count_if(v1.begin(), v1.end(), greater_then_zero);
+  std::cout << "result : " << result1 << std::endl;   //result : 4
 
-  f(1, 2);  // my_functor -> 3, call count: 1
-  f(3, 4);  // my_functor -> 7, call count: 2
-  f(5, 6);  // my_functor -> 11, call count: 3
+  std::vector<person> v2{
+      person("Дмитрий", 69),
+      person("Лола", 164),
+      person("Василий", 120),
+      person("Микки", 156),
+      person("Мария", 202),
+      person("Иван", 185),
+      person("Евгений", 151),
+      person("Владислав", 133),
+  };
 
+  long long result2 = std::count_if(v2.begin(), v2.end(), v2.front());
+  std::cout << "result : " << result2 << std::endl;   //result : 5
   return 0;
 }
