@@ -1,9 +1,8 @@
-#include <iostream>
 /*
- *
  * Что будет если использовать "virtual" + полиморфизм + виртуальный диструктор
- *
  */
+
+#include <iostream>
 
 class Gun {
  public:

@@ -1,9 +1,9 @@
-#include <iostream>
 /*
- *
  * Шаблонны функций
  * typename (из языка "С") и class(пришло в "С++") - одно и тоже.
  */
+
+#include <iostream>
 
 // T - это один тип данных
 template<typename T>

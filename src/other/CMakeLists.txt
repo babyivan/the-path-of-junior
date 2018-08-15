@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 # Простой пример try-catch конструкции и exceptions
 add_executable(exceptions__1 exceptions_1.cpp)
 
-# exceptions и throw + несколько catch
+# throw, exception и несколько catch
 add_executable(exceptions__2 exceptions_2.cpp)
 
 # Свой простой класс exceptions

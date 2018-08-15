@@ -1,6 +1,4 @@
-#include <iostream>
 /*
- *
  * Перегрузка функций
  * ...
  * Нельзя перегружать:
@@ -11,6 +9,8 @@
  * - Тип аргументов
  * - Наличие или отсутствие многоточия
  */
+
+#include <iostream>
 
 int sum(int a, int b) {
   std::cout << "int sum(int a, int b)" << std::endl;

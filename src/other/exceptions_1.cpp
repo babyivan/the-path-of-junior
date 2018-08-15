@@ -1,10 +1,9 @@
+/*
+ * Простой пример конструкции try-catch + exceptions
+ */
+
 #include <iostream>
 #include <fstream>
-/*
- *
- * Простой пример try-catch конструкции и exceptions
- *
- */
 
 int main() {
   const std::string path = "file.txt";

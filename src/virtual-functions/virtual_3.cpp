@@ -1,10 +1,9 @@
-#include <iostream>
 /*
- *
  * Зачем использовать "virtual" + полиморфизм + виртуальный деструктор
- * Смотреть класс "Player"
- *
+ * на примере класса "Player"
  */
+
+#include <iostream>
 
 class Gun {
  public:

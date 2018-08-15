@@ -1,9 +1,8 @@
-#include <iostream>
 /*
- *
  * Множественное наследование - вызов одинаковых методов из классов наследников
- *
  */
+
+#include <iostream>
 
 class printer {
  public:

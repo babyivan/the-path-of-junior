@@ -1,10 +1,9 @@
+/*
+ * Свой простой класс exceptions
+ */
+
 #include <iostream>
 #include <fstream>
-/*
- *
- * Свой простой класс exceptions
- *
- */
 
 class my_exception : public std::runtime_error {
  public:

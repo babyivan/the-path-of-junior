@@ -1,9 +1,8 @@
-#include <iostream>
 /*
- *
  * Делегирующий конструктор
- *
  */
+
+#include <iostream>
 
 class human {
  public:

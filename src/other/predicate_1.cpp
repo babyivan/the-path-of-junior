@@ -1,11 +1,11 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
 /*
- *
  * Предикаты
  * по факту функция которая должна возращать bool значение
  */
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
 
 // Простенький предикат
 bool greater_then_zero(const int &a) {

@@ -1,9 +1,8 @@
-#include <iostream>
 /*
- *
  * Зачем же использовать "virtual" в наследовании
- *
  */
+
+#include <iostream>
 
 class Gun {
  public:

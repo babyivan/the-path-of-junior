@@ -1,10 +1,9 @@
+/*
+ * Наследование шаблонов класса
+ */
+
 #include <iostream>
 #include <typeinfo>
-/*
- *
- * Наследование шаблонов класса
- *
- */
 
 class test_class {
  public:

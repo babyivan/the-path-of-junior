@@ -1,10 +1,9 @@
+/*
+ * throw, exception и несколько catch
+ */
+
 #include <iostream>
 #include <fstream>
-/*
- *
- * Exceptions и throw + несколько catch
- *
- */
 
 namespace a {
 void print_number(int value) {

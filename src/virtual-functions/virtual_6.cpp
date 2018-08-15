@@ -1,9 +1,8 @@
-#include <iostream>
 /*
- *
  * Вызов виртуальных методов базового класса в классах наследниках
- *
  */
+
+#include <iostream>
 
 class message {
  public:

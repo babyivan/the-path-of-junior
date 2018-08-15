@@ -1,9 +1,9 @@
-#include <iostream>
 /*
- *
  * Множественное (ромбовидное) наследование
- *
  */
+
+#include <iostream>
+
 namespace virtual9_1 {
 class component {
  public:
@@ -149,6 +149,7 @@ int main() {
     // ... class human : public character ... class robot : public virtual character ...
 
     android a1;             // character()  human()  character()  robot()  android()
+    a1.print_health();      // error: reference to 'get_health' is ambiguous
     a1.apply_damage(-20);   // error: reference to 'get_health' is ambiguous
                             // In member function 'void virtual9_1::android::apply_damage(int)'
     a1.print_health();      // Не выполниться
