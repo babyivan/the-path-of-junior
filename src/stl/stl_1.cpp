@@ -1,7 +1,7 @@
 #include <iostream>
 /*
  *
- * Vector из STL C++
+ * Vector STL
  *
  */
 
