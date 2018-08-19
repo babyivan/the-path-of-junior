@@ -27,3 +27,12 @@ add_executable(func-overload__1 function-overload_1.cpp)
 
 # Преобразования в С++
 add_executable(cast__2 cast_2.cpp)
+
+# typedef
+add_executable(typedef__1 typedef_1.cpp)
+
+# std::function
+add_executable(function__1 function_1.cpp)
+
+# lambda
+add_executable(lambda__1 lambda_1.cpp)
